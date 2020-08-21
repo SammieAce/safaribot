@@ -21,6 +21,7 @@ public class Application extends SpringBootServletInitializer {
         SpringApplication.run(Application.class, args);
     }
 
+    /*share bot instance with all views*/
     @Bean
     public Bot alice() {
         return new Bot(BotConfiguration.builder()
@@ -36,7 +37,7 @@ public class Application extends SpringBootServletInitializer {
 
     private final Chat chatSession;
 
-//original name was ChatService
+/* creating a bot and chat object. */
     public Application() {
         BotConfiguration botConfiguration = BotConfiguration.builder()
                 .name("alice")
@@ -46,8 +47,9 @@ public class Application extends SpringBootServletInitializer {
         chatSession = new Chat(bot);
 
     }
-
+    /*getting an answer*/
     public String answer(String message) {
+
         return chatSession.multisentenceRespond(message);
     }
 

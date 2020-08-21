@@ -9,6 +9,7 @@ public class MessageList extends Div {
     public MessageList() {
         setClassName(getClass().getSimpleName());
     }
+    /*custom div that allows lines of texts to be added to it*/
     public void addMessage(String from, Avataaar avatar, String text, boolean isCurrentUser) {
         Span fromContainer = new Span(new Text(from));
         fromContainer.addClassName(getClass().getSimpleName() + "-name");
